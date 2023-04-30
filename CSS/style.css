@@ -1,0 +1,186 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.container-form {
+  position: relative;
+  height: 10%;
+  background-color: #fcfaee;
+}
+.container-form h4 {
+  padding-bottom: 1%;
+  color: #577275;
+}
+.container-form .card {
+  padding: 50% auto;
+  padding-left: 15%;
+  background-color: rgb(255, 255, 255, 0.1);
+  box-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.5);
+}
+.container-form .card-body {
+  padding: 5%;
+}
+.container-form .col-12 {
+  padding-right: 5%;
+}
+.container-form .container-empty {
+  padding: 0.5%;
+}
+.about h3 {
+  padding: 2%;
+  font-size: 8vmin;
+}
+.about img {
+  width: 100%;
+  margin-right: 2%;
+  /* height: 100%; */
+}
+.kerala-info {
+  margin-top: 1%;
+  font-family: "Marck Script", cursive;
+}
+.kerala-info p {
+  font-size: 3vmin;
+  color: #1f8432;
+  font-weight: bold;
+}
+.packages img {
+  width: 300px;
+}
+.end-session {
+  border: 2px dashed #191d32;
+}
+.packages .container {
+  margin-top: 2%;
+  background-color: #a6a6b5;
+  padding-bottom: 2%;
+}
+.packages h2 {
+  /* margin-bottom: 3%; */
+  margin: 3% 0;
+  color: brown;
+}
+.packages .card {
+  transition: 0.3s ease-in-out;
+  opacity: 0.6;
+  background-color: rgb(255, 255, 255, 0.1);
+
+  border-top-color: rgb(255, 255, 255, 0.5);
+  border-left-color: rgb(255, 255, 255, 0.5);
+  border-bottom-color: rgb(255, 255, 255, 0.1);
+  border-right-color: rgb(255, 255, 255, 0.1);
+  box-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.5);
+}
+.packages .card:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.packages .card img {
+  padding: 5%;
+}
+
+.packages .card .more span {
+  display: inline;
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  padding: 2%;
+  background-color: #4b2206;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+.packages .card .more {
+  text-decoration: none;
+}
+.packages .card .more span:hover {
+  background-color: #fcfaee;
+  color: #191d32;
+}
+.packages .card img {
+  width: 95%;
+  margin-left: 2%;
+}
+.aboutus .wrapper {
+  max-width: 800px;
+
+  width: 85%;
+  margin: 0 auto;
+  padding: 20px auto;
+  /* padding: 35px 0; */
+  /* padding-top: 0; */
+  margin-top: 10;
+}
+.aboutus .wrapper p {
+  line-height: 1.5;
+  font-size: 18px;
+  color: #734553;
+  text-align: center;
+  font-style: italic;
+  border-bottom: 1px dotted #4b2206;
+  border-top: 1px dotted #4b2206;
+  padding: 2%;
+}
+.aboutus h2 {
+  color: crimson;
+  font-family: "Marck Script", cursive;
+  padding: 2%;
+}
+.aboutus .card {
+  border: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.contactus {
+  width: 60%;
+  padding: 45px;
+  border-radius: 0;
+}
+.contactus .row {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.contactus .leftcol {
+  padding: 20px;
+  margin-top: 10%;
+}
+.contactus .rightcol {
+  background-color: #2e8a9e;
+  padding: 20px;
+  color: white;
+}
+.contactus .form-control {
+  height: 52px;
+  font-size: 14px;
+  border-radius: 12px;
+  box-sizing: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.contactus .bi {
+  font-size: 20px;
+}
+.contactus .d-flex {
+  font-size: 18px;
+  padding-left: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .contactus {
+    width: 100%;
+  }
+}
+footer {
+  background-color: #577275;
+}
+.foot a {
+  padding: 0.5%;
+}

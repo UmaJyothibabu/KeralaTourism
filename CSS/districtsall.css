@@ -1,0 +1,77 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/bgdst.png");
+  background-size: cover;
+}
+/* .bgimg {
+  background-image: url("../images/bgdst.jpg");
+ 
+  height: 100vh;
+  min-height: 400px;
+  /* filter: opacity(0.6); */
+
+.caption {
+  margin-top: 8%;
+  color: #935939;
+  text-shadow: 1px 1px #935939;
+}
+.card-img-top {
+  width: 90%;
+  height: 163px;
+  position: center center;
+}
+.wrapper {
+  margin-top: 25px;
+}
+
+.card {
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  height: 350px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(1rem);
+  box-shadow: 1rem 1rem 1rem rgb(0, 0, 0.5, 0.5);
+  background-color: rgb(255, 255, 255, 0.1);
+
+  border-top-color: rgb(255, 255, 255, 0.5);
+  border-left-color: rgb(255, 255, 255, 0.5);
+  border-bottom-color: rgb(255, 255, 255, 0.1);
+  border-right-color: rgb(255, 255, 255, 0.1);
+}
+.card .imgbx {
+  position: relative;
+  margin-top: 10%;
+  z-index: 2;
+}
+.card .imgbx a {
+  text-decoration: none;
+}
+
+.card .imgbx:hover {
+  transform: translateY(-100px) scale(1.2);
+}
+
+.card .imgbx img {
+  margin: 0 0 20px;
+  transition: 0.5s ease-in-out;
+}
+
+.containerlast {
+  padding-bottom: 2%;
+}
+
+.icons a {
+  text-decoration: none;
+  padding: 0.5%;
+}
