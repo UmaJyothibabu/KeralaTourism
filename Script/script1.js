@@ -215,7 +215,7 @@ function passregexValidation() {
   ) {
     alertmsg.style.color = "green";
     alertmsg.innerHTML = `<h6>Valid Password</h6>`;
-    flag++;
+
     setTimeout(() => {
       alertmsg.innerHTML = "";
     }, 400);
