@@ -1,7 +1,7 @@
 let email = document.getElementById("floatingInputmail");
 let password = document.getElementById("floatingPassword");
 let pwdRules = document.getElementsByClassName("password-rules");
-let flag = 0;
+
 let rulelen = false,
   rulenum = false,
   ruleupper = false,
@@ -14,7 +14,7 @@ function fillCheck(fieldName, alertmsg) {
   alertmsg.style.color = "red";
   alertmsg.style.fontFamily = "'Times New Roman', Times, serif";
   alertmsg.style.fontSize = "1em";
-  // alertmsg.style.fontStyle = "italic";
+
   alertmsg.style.fontWeight = "bold";
 }
 
@@ -220,7 +220,6 @@ function passregexValidation() {
       alertmsg.innerHTML = "";
     }, 400);
     validpassword = true;
-    rule = 0;
   } else {
     alertmsg.innerHTML = `<h6>Invalid password </h6>`;
     password.style.borderColor = "red";
@@ -233,9 +232,7 @@ function passregexValidation() {
   }
 }
 function checkFields() {
-  console.log(flag);
   if (validemail && validpassword) {
-    console.log(flag);
     return true;
   } else {
     alert("Fill the mandatory fields");

@@ -410,7 +410,6 @@ function passregexValidation() {
     setTimeout(() => {
       alertmsg.innerHTML = "";
     }, 400);
-    flag++;
   } else {
     alertmsg.innerHTML = `<h6>Invalid password </h6>`;
     alertmsg.style.color = "red";
@@ -429,9 +428,7 @@ function passregexValidation() {
 // let submitButton = document.getElementsById("submit-btn");
 // submitButton.addEventListener("onclick", checkFiedlds);
 function checkFields() {
-  console.log(flag);
   if (validconfirm && validemail && validname && validpassword && validphone) {
-    console.log(flag);
     return true;
   } else {
     alert("Fill the mandatory fields");
