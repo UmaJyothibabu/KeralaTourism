@@ -405,6 +405,7 @@ function passregexValidation() {
     rulenum
   ) {
     alertmsg.style.color = "green";
+    alertmsg.innerHTML = `<h6>Valid Password</h6>`;
     validpassword = true;
     setTimeout(() => {
       alertmsg.innerHTML = "";
