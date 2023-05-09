@@ -16,7 +16,7 @@ body {
   font-size: 14px;
 }
 .navbar a {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 700;
   color: #345830;
 }
@@ -39,6 +39,51 @@ body {
 .login-form h3 {
   padding-top: 10%;
   padding-bottom: 5%;
+}
+
+.login-form .toggle-password {
+  width: 40px;
+  height: 40px;
+
+  top: 10%;
+  right: 0.5%;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.login-form .toggle-password.active i.bi-eye {
+  display: none;
+}
+.login-form .toggle-password.active i.bi-eye-slash {
+  display: inline;
+}
+.login-form .toggle-password i.bi-eye-slash {
+  display: none;
+}
+.login-form .password-rules {
+  transform: translateX(-50%);
+  background-color: #dbdde6;
+  border-radius: 5px;
+  height: 0px;
+  padding: 0px;
+  opacity: 1;
+}
+.login-form .password-rules.active {
+  opacity: 1;
+  padding: 5%;
+  height: 10%;
+}
+.login-form .password-rules > div {
+  /* margin: 15px 10px; */
+  font-weight: 500;
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #75698c;
+}
+.login-form .password-rules > div.active {
+  color: darkgreen;
 }
 .wrapper input {
   background-color: var(--light-white);
@@ -77,4 +122,25 @@ body {
   color: blue;
   font-weight: 500;
   font-size: 15px;
+}
+
+/* .bi-info-circle-fill {
+  margin-right: 90%;
+} */
+.form .strengthIndicte {
+  display: none;
+}
+.form .strengthIndicte.active {
+  display: block;
+  margin-top: 14px;
+}
+
+/* .text-icon {
+  display: flex;
+} */
+.text-icon .strengthmsg {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding-top: 2%;
 }

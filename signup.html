@@ -23,21 +23,64 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="CSS/style1.css" />
   </head>
   <body>
-    <nav class="navbar bg-body-tertiary">
+    <!-- <nav class="navbar bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
-          <!-- <img
+           <img
             src="/images/logo.png"
             alt="Logo"
             width="50"
             height="40"
             class="d-inline-block align-text-top"
-          /> -->
+          />
           TripTip
         </a>
+      </div>
+    </nav> -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <img src="images/logo.png" alt="" />
+        <a class="navbar-brand fw-bolder" href="#">TRIPTIP</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="districts.html">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contactus">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signin.html">Login</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
     <section class="wrapper">
@@ -54,7 +97,11 @@
               alt="logo"
             />
           </div>
-          <form class="rounded bg-white shadow p-5 login-form">
+          <form
+            class="rounded bg-white shadow p-5 login-form"
+            action="index.html"
+            onsubmit="return checkFields()"
+          >
             <h3 class="text-dark fw-bolder fs-4 mb-2">Create an Account</h3>
 
             <div class="form-floating mb-3">
@@ -65,6 +112,7 @@
                 placeholder="name@example.com"
               />
               <label for="floatingFirstName">First Name</label>
+              <div id="msgFname"></div>
             </div>
             <div class="form-floating mb-3">
               <input
@@ -79,21 +127,23 @@
               <input
                 type="email"
                 class="form-control"
-                id="floatingInput"
+                id="floatingInputmail"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">Email address</label>
+              <label for="floatingInputtmail">Email address</label>
+              <div id="msgmail"></div>
             </div>
             <div class="form-floating mb-3">
               <input
                 type="tel"
                 class="form-control"
-                id="floatingInput"
+                id="floatingInputPh"
                 placeholder="+91"
               />
-              <label for="floatingInput">Phone Number</label>
+              <label for="floatingInputPh">Phone Number</label>
+              <div id="msgph"></div>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 pwdelement position-relative">
               <input
                 type="password"
                 class="form-control"
@@ -101,32 +151,73 @@
                 placeholder="Password"
               />
               <label for="floatingPassword">Password</label>
-              <span class="password-info mt-2"
+              <div class="toggle-password position-absolute showHide">
+                <i class="bi bi-eye"></i>
+                <i class="bi bi-eye-slash"></i>
+              </div>
+              <div class="strengthIndicte">
+                <div class="text-icon pt-1">
+                  <i class="bi bi-info-circle-fill"></i>
+                  <h6 class="strengthmsg ps-2"></h6>
+                </div>
+              </div>
+              <div
+                class="password-rules position-relative top-0 start-50 w-auto text-start overflow-hidden mt-2"
+              >
+                <div class="length">
+                  <i class="bi bi-check"></i> 8 characters
+                </div>
+                <div class="numberrule" class="rules">
+                  <i class="bi bi-check"></i> Must contain atleast one number
+                </div>
+                <div class="uppercaserule">
+                  <i class="bi bi-check"></i>
+                  Must contain atleast one uppercase alphabet
+                </div>
+                <div class="lowercaserule">
+                  <i class="bi bi-check"></i>
+
+                  Must contain atleast one lowercase alphabet
+                </div>
+              </div>
+              <div id="msgpwd"></div>
+              <!-- <span class="password-info mt-2"
                 >Use 8 or more characters with a mix of letters, numbers &
                 symbols.</span
-              >
+              > -->
             </div>
             <div class="form-floating mb-3">
               <input
                 type="password"
                 class="form-control"
-                id="floatingPassword"
+                id="floatingPassword1"
                 placeholder="Password"
               />
-              <label for="floatingPassword">Confirm Password</label>
+              <label for="floatingPassword1 toggle-password"
+                >Confirm Password</label
+              >
+              <div class="toggle-password position-absolute showHide">
+                <i class="bi bi-eye"></i>
+                <i class="bi bi-eye-slash"></i>
+              </div>
+              <div id="msgpwd1"></div>
             </div>
             <div class="form-check d-flex align-items-center">
               <input
                 class="form-check-input"
                 type="checkbox"
-                id="gridCheck"
+                id="gridCheck1"
                 checked
               />
               <label class="form-check-label ms-2" for="gridCheck">
                 I Agree <a href="#">Terms and conditions</a>.
               </label>
             </div>
-            <button type="submit" class="btn btn-primary submit_btn w-100 my-4">
+            <button
+              type="submit"
+              id="submit-btn"
+              class="btn btn-primary submit_btn w-100 my-4"
+            >
               Continue
             </button>
             <div class="fw-normal text-muted mb-2">
@@ -169,5 +260,6 @@
         </div>
       </div>
     </section>
+    <script src="Script/script.js"></script>
   </body>
 </html>
