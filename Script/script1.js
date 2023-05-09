@@ -2,6 +2,10 @@ let email = document.getElementById("floatingInputmail");
 let password = document.getElementById("floatingPassword");
 let pwdRules = document.getElementsByClassName("password-rules");
 let flag = 0;
+let rulelen = false,
+  rulenum = false,
+  ruleupper = false,
+  rulelower = false;
 let validemail = false,
   validpassword = false;
 
@@ -106,23 +110,31 @@ password.addEventListener("keyup", passValidation);
 function passValidation() {
   if (leng.test(password.value)) {
     lengthRule[0].classList.add("active");
+    rulelen = true;
   } else {
     lengthRule[0].classList.remove("active");
+    rulelen = false;
   }
   if (uCase.test(password.value)) {
     upper[0].classList.add("active");
+    ruleupper = true;
   } else {
     upper[0].classList.remove("active");
+    ruleupper = false;
   }
   if (lCase.test(password.value)) {
     lower[0].classList.add("active");
+    rulelower = true;
   } else {
     lower[0].classList.remove("active");
+    rulelower = false;
   }
   if (numbers.test(password.value)) {
     numberRule[0].classList.add("active");
+    rulenum = true;
   } else {
     numberRule[0].classList.remove("active");
+    rulenum = false;
   }
   passwordStrength();
 }
@@ -157,6 +169,7 @@ const indicator = document.querySelector(".strengthIndicte"),
   iconText = document.querySelector(".text-icon"),
   text = document.querySelector(".strengthmsg"),
   showHide = document.querySelector(".showHide");
+
 function passwordStrength() {
   let pwdVal = password.value;
   let strength = pStrength(pwdVal);
@@ -188,16 +201,25 @@ function passwordStrength() {
     }
   }
 }
+
 function passregexValidation() {
   passregex = /^[A-Za-z0-9]{8,32}$/;
+
   let alertmsg = document.getElementById("msgpwd");
-  if (passregex.test(password.value)) {
+  if (
+    passregex.test(password.value) &&
+    rulelen &&
+    rulelower &&
+    rulenum &&
+    ruleupper
+  ) {
     alertmsg.style.color = "green";
     flag++;
     setTimeout(() => {
       alertmsg.innerHTML = "";
     }, 400);
     validpassword = true;
+    rule = 0;
   } else {
     alertmsg.innerHTML = `<h6>Invalid password </h6>`;
     password.style.borderColor = "red";

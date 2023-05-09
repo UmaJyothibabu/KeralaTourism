@@ -9,8 +9,11 @@ let validemail = false,
   validname = false,
   validpassword = false,
   validconfirm = false;
-let unfilled = 0;
-let flag = 0;
+
+let rulelen = false,
+  rulenum = false,
+  ruleupper = false,
+  rulelower = false;
 
 //First name mandatory
 firstName.addEventListener("blur", fillcheckFname);
@@ -86,6 +89,7 @@ function fillcheckPwd() {
   let fieldName = "Password";
 
   pwdRules[0].classList.remove("active");
+
   let alertmsg = document.getElementById("msgpwd");
   if (password.value == "") {
     fillCheck(fieldName, alertmsg);
@@ -271,23 +275,31 @@ password.addEventListener("keyup", passValidation);
 function passValidation() {
   if (leng.test(password.value)) {
     lengthRule[0].classList.add("active");
+    rulelen = true;
   } else {
     lengthRule[0].classList.remove("active");
+    rulelen = false;
   }
   if (uCase.test(password.value)) {
     upper[0].classList.add("active");
+    ruleupper = true;
   } else {
     upper[0].classList.remove("active");
+    ruleupper = false;
   }
   if (lCase.test(password.value)) {
     lower[0].classList.add("active");
+    rulelower = true;
   } else {
     lower[0].classList.remove("active");
+    rulelower = false;
   }
   if (numbers.test(password.value)) {
     numberRule[0].classList.add("active");
+    rulenum = true;
   } else {
     numberRule[0].classList.remove("active");
+    rulenum = false;
   }
   passwordStrength();
 }
@@ -385,7 +397,13 @@ function comparePass() {
 function passregexValidation() {
   passregex = /^[A-Za-z0-9]{8,32}$/;
   let alertmsg = document.getElementById("msgpwd");
-  if (passregex.test(password.value)) {
+  if (
+    passregex.test(password.value) &&
+    rulelen &&
+    rulelower &&
+    ruleupper &&
+    rulenum
+  ) {
     alertmsg.style.color = "green";
     validpassword = true;
     setTimeout(() => {
@@ -400,9 +418,13 @@ function passregexValidation() {
     iconText.style.color = "#000";
     text.textContent = "";
     validpassword = false;
+    lengthRule[0].classList.remove("active");
+    upper[0].classList.remove("active");
+    lower[0].classList.remove("active");
+    numberRule[0].classList.remove("active");
   }
 }
-console.log(flag);
+
 // let submitButton = document.getElementsById("submit-btn");
 // submitButton.addEventListener("onclick", checkFiedlds);
 function checkFields() {
